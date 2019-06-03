@@ -1,0 +1,78 @@
+h1{
+    color: blue;
+    border: 1px solid black;
+}
+span {
+    border: 1px solid black;
+    background-color: lime;
+}
+.done{
+    text-decoration: line-through;
+}
+.second{
+    font-weight: bold;
+}
+.first{
+    font-weight: bold;
+}
+/* 所有具有"data-vegetable"属性的元素将被应用绿色的文本颜色 */
+[data-vegetable] {
+    color: green
+}
+
+/* 所有具有"data-vegetable"属性且属性值刚好为"liquid"的元素将被应用金色的背景颜色 */
+[data-vegetable="liquid"] {
+    background-color: goldenrod;
+}
+
+/* 所有具有"data-vegetable"属性且属性值包含"spicy"的元素，
+即使元素的属性中还包含其他属性值，都会被应用红色的文本颜色 */
+[data-vegetable~="spicy"] {
+    color: red;
+}
+p{
+    margin: 1px;
+    padding: 10px;
+    /*border: 2px solid black;*/
+    background-color: cyan;
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {      transform: rotate(360deg);
+    }
+}
+
+/*p {
+    color: red;
+    width: 100px;
+    font-size: 40px;
+    transform-origin: center;
+}*/
+
+img:hover {
+    animation-name: rotate;
+    animation-duration: 0.1s;
+    animation-timing-function: linear;
+    animation-iteration-count: 5000;
+}
+div + div {
+    font-weight: bold;
+}
+
+div~div{
+    font-style: italic;
+}
+
+div > div {
+    color: green;
+}
+[src]{
+    width: 200px;
+    height: 200px;
+}
+div div{
+    background-color: yellow;
+}

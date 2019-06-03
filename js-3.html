@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<h1>My shopping list</h1>
+<div>
+    <label for="add">Enter a new item</label>
+    <input type="text" name="add" id="add">
+    <button type="submit">Add item</button>
+    <button type="submit" class="all">Delete all</button>
+
+</div>
+<ul>
+
+</ul>
+
+<script>
+    let ul=document.querySelector("ul");
+    let input=document.querySelector("input");
+    let button=document.querySelector("button");
+    let body=document.querySelector("body");
+    let div=document.querySelector("div");
+    let button1=document.querySelector(".all")
+    /*let count=0;*/
+
+    button.onclick=click;
+    function click() {
+        /*count++;*/
+        let item=input.value;
+        input.value="";
+        let list=document.createElement("li");
+        let span=document.createElement("span");
+        let button=document.createElement("button");
+        /*let button1=document.createElement("button");*/
+
+            /*div.appendChild(button1);*/
+            /*button1.textContent="Delete All";*/
+
+
+
+
+        ul.appendChild(list);
+        list.appendChild(span);
+        list.appendChild(button);
+
+        span.textContent=item;
+        button.textContent="Delete";
+        ul.appendChild(list);
+        button.onclick=del;
+        function del(){
+            ul.removeChild(list);
+        }
+
+        button1.onclick=del1;
+        function del1(){
+            let all=document.querySelectorAll("ul > li");
+            for (let i = 0; i <all.length ; i++) {
+                ul.removeChild(all[i]);
+            }
+        }
+
+        input.focus();
+
+
+
+    }
+
+
+</script>
+</body>
+
+</html>

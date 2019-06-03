@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            margin: 50px auto 0 auto;
+            border-collapse: collapse;
+            text-align: center;
+            vertical-align: center;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            width: 100px;
+            height: 30px;
+        }
+        .cell {
+            display: inline-block;
+            margin-right: 50px;
+        }
+        .row {
+            margin: 0 auto;
+            width: 800px;
+        }
+        .row + .row {
+            margin-top: 30px;
+        }
+        .row:nth-of-type(1) {
+            margin-top: 100px;
+        }
+        .row:nth-of-type(3) {
+            margin-bottom: 100px;
+        }
+        label {
+            display: inline-block;
+            width: 50px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        input {
+            height: 25px;
+            width: 250px;
+        }
+        button {
+            width: 150px;
+            height: 40px;
+            background-color: rgba(22, 155, 213, 1);
+            border-radius: 10px;
+            border: 0;
+            margin-left: 60px;
+        }
+    </style>
+</head>
+<body>
+<div id="top">
+    <div class="row">
+        <div class="cell">
+            <label for="id">ID</label><input type="text" name="" id="id">
+        </div>
+        <div class="cell">
+            <label for="name">Name</label><input type="text" name="" id="name">
+        </div>
+    </div>
+    <div class="row">
+        <div class="cell">
+            <label for="salary">Salary</label><input type="text" name="" id="salary">
+        </div>
+        <div class="cell">
+            <label for="job">Job</label><input type="text" name="" id="job">
+        </div>
+    </div>
+    <div class="row">
+        <button>add</button>
+    </div>
+</div>
+
+
+<hr>
+
+<div id="bottom">
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Job</th>
+            <th>Delete</th>
+        </tr>
+    </table>
+</div>
+
+<script>
+    /*DOMContentLoaded顾名思义，就是dom内容加载完毕*/
+    document.addEventListener("DOMContentLoaded", function () {
+        let idInput = document.querySelector("#id");
+        let nameInput = document.querySelector("#name");
+        let salaryInput = document.querySelector("#salary");
+        let jobInput = document.querySelector("#job");
+        let addButton = document.querySelector("button");
+        let tbody = document.querySelector("tbody");
+        addButton.addEventListener("click", function () {
+            let tr = document.createElement("tr");
+            let idTd = document.createElement("td");
+            let nameTd = document.createElement("td");
+            let jobTd = document.createElement("td");
+            let salaryTd = document.createElement("td");
+            let deleteTd = document.createElement("td");
+            let img = document.createElement("img");
+            tbody.appendChild(tr);
+            tr.appendChild(idTd);
+            tr.appendChild(nameTd);
+            tr.appendChild(salaryTd);
+            tr.appendChild(jobTd);
+            tr.appendChild(deleteTd);
+            idTd.textContent = idInput.value;
+            nameTd.textContent = nameInput.value;
+            salaryTd.textContent = salaryInput.value;
+            jobTd.textContent = salaryInput.value;
+            deleteTd.appendChild(img);
+            img.src = "images/delete.svg";
+            img.addEventListener("click", function () {
+                tbody.removeChild(tr);
+            });
+            idInput.value = '';
+            nameInput.value = '';
+            salaryInput.value = '';
+            jobInput.value = '';
+            idInput.focus();
+        });
+    });
+</script>
+</body>
+</html>

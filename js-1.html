@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>点我啊</button>
+</body>
+<script>
+    /*document.addEventListener("DOMContentLoaded",function () {
+        let buttons=document.querySelectorAll("button");
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener("click",creatP);
+        }
+
+        function creatP() {
+            let p=document.createElement("p");
+            p.textContent="你点击了这个按钮";
+            document.body.appendChild(p);
+        }
+    });*/
+
+    document.addEventListener("DOMContentLoaded",get);
+    
+    function  get() {
+        let buttons=document.querySelectorAll("button");
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener("click",creatP);
+        }
+    }
+    
+    function creatP() {
+        let p=document.createElement("p");
+        p.textContent="你点击了这个按钮";
+        document.body.appendChild(p);
+    }
+</script>
+</html>

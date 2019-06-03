@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        table{
+            border-collapse: collapse;
+            border: 2px solid rgb(149, 58, 200);
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+
+
+
+        }
+        html{
+            font-family: sans-serif;
+        }
+        td{
+            color: blue;
+            /*background-color: aqua;*/
+
+            border: 1px solid rgb(190,190,190);
+            padding: 10px 20px;
+
+        }
+        th{
+            border: 1px solid rgb(190,190,190);
+            padding: 10px 20px;
+
+        }
+        tr:nth-child(even) td {
+            background-color: rgb(221, 250, 245);
+
+
+        }
+        tr,td,th{
+            border: 5px dashed rgb(158, 190, 51);
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <th>姓名</th>
+        <th>年龄</th>
+    </tr>
+    <tr>
+        <td colspan="2">张三</td>
+    </tr>
+    <tr>
+        <td>李五</td>
+        <td>19</td>
+    </tr>
+    <tr>
+        <td>赵七</td>
+        <td rowspan="2">20</td>
+    </tr>
+    <tr>
+        <td>周多</td>
+
+    </tr>
+</table>
+</body>
+</html>

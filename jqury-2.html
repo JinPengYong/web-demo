@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            margin: 50px auto 0 auto;
+            border-collapse: collapse;
+            text-align: center;
+            vertical-align: center;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            width: 100px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+<!--<table>
+
+</table>-->
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script>
+    let header = ["empNo", "empName", "job", "mgr", "hireDate", "sal", "com", "deptNo"];
+    $(function () {
+
+        /*let $tbody=$("<tbody></tbody>");
+        let $tr=$("<tr></tr>");
+        $("table").append($tbody);
+        $("tbody").append($tr);
+        for (let i = 0; i <header.length ; i++) {
+            let $th= $("<th></th>");
+            $tr.append($th);
+            $th.html(header[i]);
+        }
+        */
+
+        let $table=$("<table></table>");
+        $("body").append($table);
+        let $tr=$("<tr></tr>");
+        $table.append($tr);
+        for (let i = 0; i <header.length ; i++) {
+            let $th= $("<th></th>");
+            $tr.append($th);
+            $th.html(header[i]);
+        }
+
+    });
+</script>
+</body>
+</html>
